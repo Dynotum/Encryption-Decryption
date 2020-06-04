@@ -3,7 +3,7 @@ package encryptdecrypt;
 public class Encrypt {
     private final int aLowerCase = 97;  // a -> 97
     private final int zLowerCase = 122; // z -> 122  ASCII
-:wq
+
     public void encryptMessage() {
         final String MESSAGE = "we found a treasure!";
         final StringBuilder newMessage = new StringBuilder();
