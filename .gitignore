@@ -1,7 +1,8 @@
 # Compiled class file
 *.class
 *out/
-
+*build/*
+*test/
 #yaml
 *.yaml
 
