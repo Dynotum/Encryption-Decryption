@@ -8,40 +8,40 @@ At this stage, you need to add the ability to read and write original and cipher
 
 Your program should read data from -data or from a file written in the -in argument. That's why you can't have both -data and -in arguments simultaneously, only one of them.
 
-    If there is no -mode, the program should work in enc mode.
-        If there is no -key, the program should consider that key = 0.
-	    If there is no -data, and there is no -in the program should assume that the data is an empty string.
-	        If there is no -out argument, the program must print data to the standard output.
-		    If there are both -data and -in arguments, your program should prefer -data over -in.
+If there is no -mode, the program should work in enc mode.
+If there is no -key, the program should consider that key = 0.
+If there is no -data, and there is no -in the program should assume that the data is an empty string.
+If there is no -out argument, the program must print data to the standard output.
+If there are both -data and -in arguments, your program should prefer -data over -in.
 
-		    If there is a non-standard situation (an input file does not exist or an argument doesn’t have a value), the program should not fail. Instead, it must display a clear message about the problem and stop successfully. The message should contain the word "Error" in any case.
-		    Examples
+If there is a non-standard situation (an input file does not exist or an argument doesn’t have a value), the program should not fail. Instead, it must display a clear message about the problem and stop successfully. The message should contain the word "Error" in any case.
+	 Examples
 
-		    Example 1
+	 Example 1
 
-		    java Main -mode enc -in road_to_treasure.txt -out protected.txt -key 5
+	 java Main -mode enc -in road_to_treasure.txt -out protected.txt -key 5
 
-		    This command must get data from the file road_to_treasure.txt, encrypt the data with the key 5, create a file called protected.txt and write ciphertext to it.
+	 This command must get data from the file road_to_treasure.txt, encrypt the data with the key 5, create a file called protected.txt and write ciphertext to it.
 
-		    Example 2
+	 Example 2
 
-		    Input:
+	 Input:
 
-		    java Main -mode enc -key 5 -data "Welcome to hyperskill!"
+	 java Main -mode enc -key 5 -data "Welcome to hyperskill!"
 
-		    Output:
+	 Output:
 
-		    \jqhtrj%yt%m~ujwxpnqq&
+	 \jqhtrj%yt%m~ujwxpnqq&
 
-		    Example 3
+	 Example 3
 
-		    Input:
+	 Input:
 
-		    java Main -key 5 -data "\jqhtrj%yt%m~ujwxpnqq&" -mode dec
+	 java Main -key 5 -data "\jqhtrj%yt%m~ujwxpnqq&" -mode dec
 
-		    Output:
+	 Output:
 
-		    Welcome to hyperskill!
+	 Welcome to hyperskill!
 
 # Stage #4: I command you in
 
@@ -51,13 +51,13 @@ Modify the previous program to work with command-line arguments instead of the s
 
 All the arguments are guaranteed to be passed to the program. If for some reason it turns out to be wrong:
 
-    If there is no -mode, the program should work in enc mode.
-        If there is no -key, the program should consider that key = 0.
-	    If there is no -data, the program should assume that the data is an empty string.
+If there is no -mode, the program should work in enc mode.
+If there is no -key, the program should consider that key = 0.
+If there is no -data, the program should assume that the data is an empty string.
 
-	    Keep in mind that arguments may be in different order. For example, -mode enc may be at the end, at the beginning or in the middle of arguments array.
+Keep in mind that arguments may be in different order. For example, -mode enc may be at the end, at the beginning or in the middle of arguments array.
 
-	    Run configuration examples for encryption
+        Run configuration examples for encryption
 
 	    java Main -mode enc -key 5 -data "Welcome to hyperskill!"
 
