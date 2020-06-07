@@ -33,7 +33,7 @@ public class Message {
             case "-in":
                 in = importFile(value);
                 break;
-            case "-on":
+            case "-out":
                 out = value;
                 break;
             default:
@@ -95,6 +95,7 @@ public class Message {
     private String importFile(String nameFile) {
         final File file = new File(nameFile);
         final StringBuilder stringBuilder = new StringBuilder();
+
         if (file.exists()) {
             try (var isr = new InputStreamReader(new FileInputStream(file));
                  var br = new BufferedReader(isr)) {
