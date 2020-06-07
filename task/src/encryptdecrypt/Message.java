@@ -1,12 +1,36 @@
 package encryptdecrypt;
 
-import static encryptdecrypt.Main.scanner;
-
 public class Message {
+    private String mode = "enc";
+    private int key = 0;
+    private String data = "";
+
+    public Message(String[] args) {
+
+        for (int i = 0; i < args.length; i++) {
+            final String value = args[i + 1];
+
+            switch (args[i]) {
+                case "-mode":
+                    mode = value;
+                    break;
+                case "-key":
+                    key = Integer.parseInt(value);
+                    break;
+                case "-data":
+                    data = value;
+                    break;
+                default:
+                    break;
+            }
+            i++;
+        }
+
+    }
 
     public void encryptMessage() {
-        final String MESSAGE = scanner.nextLine();
-        final int key = scanner.nextInt();
+        final String MESSAGE = data;
+        final int key = this.key;
 
         final StringBuilder newMessage = new StringBuilder();
 
@@ -16,9 +40,9 @@ public class Message {
         System.out.println(newMessage);
     }
 
-    public void descryptMessage() {
-        final String MESSAGE = scanner.nextLine();
-        final int key = scanner.nextInt();
+    public void decryptMessage() {
+        final String MESSAGE = data;
+        final int key = this.key;
 
         final StringBuilder newMessage = new StringBuilder();
 
@@ -26,5 +50,18 @@ public class Message {
             newMessage.append((char) (character - key));
         }
         System.out.println(newMessage);
+    }
+
+    public void doAction() {
+        switch (mode) {
+            case "enc":
+                encryptMessage();
+                break;
+            case "dec":
+                decryptMessage();
+                break;
+            default:
+                break;
+        }
     }
 }
