@@ -12,9 +12,10 @@ public class Message {
 
     public Message(String[] args) {
 
-        for (int i = 0; i < args.length; i += 2) {
-            final String value = args[i + 1];
+        for (int i = 0; i < args.length; i++) {
+            String value = args[i + 1];
             fillValues(args[i], value);
+            i++;
         }
     }
 
